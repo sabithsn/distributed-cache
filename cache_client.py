@@ -3,18 +3,25 @@ import json
 import time
 
 request_type = "database"
-request_type = "static"
+# request_type = "static"
 
 if request_type == "database":
-
-    data = {
-        'title': 'How to Pick a Stage Name3'
-    }
 
     misses = 0
     start_time = time.time()
 
+    titles = []
+    with open ("sample.txt", "r") as f:
+        for line in f:
+            titles.append(line.strip())
+
     for i in range (100):
+
+        title = titles[i]
+        data = {
+            'title': title
+        }
+
         response = requests.post('http://localhost:8000/db_query/', data=data)
         rcvd_data = response.json()
 
