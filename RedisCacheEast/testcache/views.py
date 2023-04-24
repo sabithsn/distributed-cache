@@ -55,7 +55,7 @@ def db_query(request):
             expensive_data = Recipe.objects.filter(title=title)[0]  # perform the expensive operation
             summary = expensive_data.summary
             print ("title:", title)
-            print ("summary:", summary)
+            # print ("summary:", summary)
             cache.set(cleaned_title, summary)  # cache the result
             data = {
                 "summary": summary,
