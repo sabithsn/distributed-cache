@@ -2,8 +2,8 @@ import requests
 import json
 import time
 
-# request_type = "database"
-request_type = "static"
+request_type = "database"
+# request_type = "static"
 
 if request_type == "database":
 

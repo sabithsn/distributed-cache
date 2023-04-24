@@ -27,7 +27,7 @@ def index(request):
         with open('index.html', 'r') as f:
             file_content = f.read()
 
-        cache.set("index_html", file_content)  # cache the result
+        cache.set("index_html", file_content, timeout = 10000)  # cache the result
         data = {
             "summary": file_content,
             "miss": 1
@@ -36,7 +36,7 @@ def index(request):
     return render(request, 'index.html')
 
 @csrf_exempt
-@cache_page(60 * 15)  # cache for 15 minutes
+@cache_page(60 * 500)  # cache for 15 minutes
 def db_query(request):
     if request.method == 'POST':
         title = request.POST.get('title')
@@ -44,7 +44,7 @@ def db_query(request):
 
         cached_data = cache.get(cleaned_title)
         if cached_data is not None:
-            print ("cached:", cached_data)
+            #print ("cached:", cached_data)
             data = {
                 "summary": cached_data,
                 "miss": 0
@@ -54,9 +54,9 @@ def db_query(request):
         else:
             expensive_data = Recipe.objects.filter(title=title)[0]  # perform the expensive operation
             summary = expensive_data.summary
-            print ("title:", title)
+            #print ("title:", title)
             # print ("summary:", summary)
-            cache.set(cleaned_title, summary)  # cache the result
+            cache.set(cleaned_title, summary, timeout=10000)  # cache the result
             data = {
                 "summary": summary,
                 "miss": 1
