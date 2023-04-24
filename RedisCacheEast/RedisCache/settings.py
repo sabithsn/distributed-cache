@@ -56,7 +56,7 @@ ROOT_URLCONF = 'RedisCache.urls'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": ["redis://34.86.56.252:6379/1"],
+        "LOCATION": ["redis://34.86.56.252:6379"],
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         },
