@@ -62,7 +62,6 @@ CACHES = {
         #     "redis://34.86.56.252:6379", #leader
         # ],
         "OPTIONS": {
-            "PASSWORD" : "master",
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         },
         "KEY_PREFIX": "example"
