@@ -21,3 +21,6 @@ redis-east-1: 34.86.56.252
 redis-east-2: 34.162.121.201
 redis-west-1: 34.106.236.65
 redis-west-2: 34.125.90.134
+
+
+replicaof 34.86.56.252 6379
