@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_x*^@y-c+nks03d!&^ng2#u9hgde6zsvw+!(^248+!5v1f)cm&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["34.102.46.81"]
+ALLOWED_HOSTS = ["35.196.64.100"]
 # Cache time to live is 15 minutes.
 CACHE_TTL = 60 * 2
 
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'RedisCache.urls'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": ["redis://34.106.236.65:6379/1", "redis://34.86.56.252:6379/1", "redis://34.162.121.201:6379/1",  "redis://34.125.90.134:6379/1"],
+        "LOCATION": ["redis://34.86.56.252:6379", "redis://34.162.121.201:6379", "redis://34.106.236.65:6379", "redis://34.125.90.134:6379"],
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         },
@@ -64,24 +64,7 @@ CACHES = {
     }
 }
 
-# CACHES = {
-#     "default": {
-#         "BACKEND": "django.core.cache.backends.memcached.PyMemcacheCache",
-#         "LOCATION": "127.0.0.1:11211",
-#     }
-# }
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
-#     }
-# }
 
-# CACHES = {
-#     'default': {
-#         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-#         'LOCATION': 'redis://127.0.0.1:6379',
-#     }
-# }
 
 TEMPLATES = [
     {
