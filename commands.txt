@@ -34,3 +34,5 @@ replicaof 34.86.56.252 6379
 
   redis-cli -h 34.125.90.134
  replicaof 34.86.56.252 6379
+
+ python3 manage.py runserver 0.0.0.0:6666
