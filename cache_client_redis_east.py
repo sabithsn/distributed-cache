@@ -22,7 +22,7 @@ if request_type == "database":
             'title': title
         }
 
-        response = requests.post('http://34.102.46.81:6666/db_query/', data=data)
+        response = requests.post('http://35.196.64.100:6666/db_query/', data=data)
         rcvd_data = response.json()
 
         if response.status_code == 200:
