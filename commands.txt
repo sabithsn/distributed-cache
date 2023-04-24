@@ -1,0 +1,23 @@
+pip install django
+pip install django-redis
+
+sudo apt install lsb-release
+
+curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+
+sudo apt-get update
+sudo apt-get install redis
+
+sudo nano /etc/redis/redis.conf
+
+sudo killall redis-server
+
+ips:
+django-east: 35.196.64.100
+django-west: 34.102.46.81
+redis-east-1: 34.86.56.252
+redis-east-2: 34.162.121.201
+redis-west-1: 34.106.236.65
+redis-west-2: 34.125.90.134
