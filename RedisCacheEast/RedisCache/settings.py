@@ -60,8 +60,6 @@ CACHES = {
         "LOCATION": [
             "redis://34.86.56.252:6379", #leader
             "redis://34.162.121.201:6379", #read-replica1
-            #"redis://34.106.236.65:6379", #read-replica2
-            #"redis://34.125.90.134:6379", #read-replica3
         ],
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
