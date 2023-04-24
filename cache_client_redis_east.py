@@ -45,7 +45,7 @@ else:
     start_time = time.time()
 
     for i in range (100):
-        response = requests.post('http://localhost:8000/')
+        response = requests.post('http://35.196.64.100:6666/')
         rcvd_data = response.json()
 
         if response.status_code == 200:
