@@ -27,7 +27,7 @@ def index(request):
         with open('index.html', 'r') as f:
             file_content = f.read()
 
-        cache.set("index_html", file_content)  # cache the result
+        cache.set("index_html", file_content,  timeout = 10000)  # cache the result
         data = {
             "summary": file_content,
             "miss": 1
@@ -56,7 +56,7 @@ def db_query(request):
             summary = expensive_data.summary
             print ("title:", title)
             print ("summary:", summary)
-            cache.set(cleaned_title, summary)  # cache the result
+            cache.set(cleaned_title, summary,  timeout = 10000)  # cache the result
             data = {
                 "summary": summary,
                 "miss": 1

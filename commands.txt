@@ -25,6 +25,8 @@ redis-west-2: 34.125.90.134
 
 replicaof 34.86.56.252 6379
 
+
+
  redis-cli -h 34.162.121.201
  replicaof 34.86.56.252 6379
 
@@ -34,5 +36,8 @@ replicaof 34.86.56.252 6379
 
   redis-cli -h 34.125.90.134
  replicaof 34.86.56.252 6379
+
+  redis-cli -h 34.86.56.252
+ INFO REPLICATION
 
  python3 manage.py runserver 0.0.0.0:6666

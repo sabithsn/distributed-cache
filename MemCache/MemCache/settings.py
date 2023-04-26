@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 # Cache time to live is 15 minutes.
-CACHE_TTL = 60 * 2
+CACHE_TTL = 60 * 500
 
 # Application definition
 
