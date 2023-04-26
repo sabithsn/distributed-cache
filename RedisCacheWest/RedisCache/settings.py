@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_x*^@y-c+nks03d!&^ng2#u9hgde6zsvw+!(^248+!5v1f)cm&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["34.102.46.81"]
+ALLOWED_HOSTS = ["34.139.95.143"]
 # Cache time to live is 15 minutes.
 CACHE_TTL = 60 * 500
 
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'RedisCache.urls'
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": ["redis://34.106.236.65:6379", "redis://34.162.121.201:6379", "redis://34.86.56.252:6379", "redis://34.125.90.134:6379"],
+        "LOCATION": ["redis://34.86.56.252:6379", "redis://34.162.121.201:6379", "redis://34.73.223.191:6379", "redis://34.138.141.219:6379"],
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         },
